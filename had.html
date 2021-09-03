@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+           table.bang1{
+    border:1px solid black;
+    width: 300px;
+    text-align: center;
+    height: 30px;
+    float: left;
+    color: steelblue;
+}
+table.bang3{
+    border:1px solid black;
+    color: darkcyan;
+
+}
+.xam{
+ color:black;
+    background-color: dimgray;
+}
+table.bang2{
+    border:1px solid black;
+    
+  background-color: mediumaquamarine;
+    float: left;
+}
+tr,td{
+    border:1px solid black;  
+}
+div.nen{
+    width: max-content;
+}
+       </style>
+    </head>
+    <body>
+        <div id="nen" class="nen">
+            <img src="car3.jpg" />
+        </div>
+        <table id="bang1" class="bang1">
+<tr>
+    <td colspan="2" style="color:aqua;" class="xam">Bang Thi Truong</td>
+</tr>
+<tr>
+    <td colspan="2"  class="xam">Vang</td>
+</tr>
+<tr>
+    <td >
+        Mua vao
+    </td>
+    <td>
+        Ban ra
+    </td>
+</tr>
+<tr>
+    <td id="vang1">&nbsp;</td>
+    <td id="usd1">&nbsp;</td>
+</tr>
+<tr>
+    <td colspan="2"  class="xam">USD</td>
+</tr>
+<tr>
+    <td >
+        Mua vao
+    </td>
+    <td>
+        Ban ra
+    </td>
+</tr>
+<tr>
+    <td  id="vang2" style="width: 20px;">&nbsp;</td>
+    <td id="usd2"  style="width: 20px;">&nbsp;</td>
+</tr>
+
+        </table>
+        <table class="bang2">
+            <tr>
+            <td colspan="2" style="text-align: center"> Cap nhat gia thi truong</td>
+            </tr>
+            <tr>
+                <td>
+                    Mua vao
+                </td>
+                <td > <input type="text" id="muavao2" / ></td>
+            </tr>
+            <tr>
+                <td>
+                   Ban ra
+                </td>
+                <td > <input type="text" id="banra2" / ></td>
+            </tr>
+            <tr> 
+                <td>Chon hinh quang cao</td>
+                <td > 
+                    <select onchange="return ll();" style="width: 178px;"  id="1">
+                        <option > Chon Xe</option>
+                        <option  value="1"> Ford</option>
+                        <option value="2"> Mercedes</option>
+                        <option value="3"> Lamboghini</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Cap nhat cho</td>
+                <td>
+                    <input type="radio" name="gia" value="1" id="vang">Vang
+                    <input type="radio" name="gia" value="2" id="usd">USD
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <button  class="xam"  onclick="return kt();"> Update</button>
+                    <button  class="xam"> State</button>
+                </td>
+            </tr>
+        </table>
+        <table class="bang3">
+            <tr>
+                <td colspan="2" style="color: mediumspringgreen;" class="xam">Bang bao gia</td>
+            </tr>
+            <tr>
+                <td colspan="2" id="hinh" style="width: 300px; height: 180px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="width: 150px;"  > Gia($) :</td>
+                <td id="gia" style="color: green;height: 20px;"> 
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <script  >
+            function kt(){
+    let muavao=document.getElementById("muavao2").value;
+    let banra=document.getElementById("banra2").value;
+  if (document.getElementById("vang").checked){
+      document.getElementById("vang1").innerHTML=muavao;
+      document.getElementById("usd1").innerHTML=banra;
+  }
+  else
+  if ( document.getElementById("usd").checked){
+        
+    document.getElementById("vang2").innerHTML=muavao;
+    document.getElementById("usd2").innerHTML=banra;
+    let banra=document.getElementById("banra2").value+'$';
+    document.getElementById("gia").innerHTML=banra;
+  }
+  else {
+      alert("Vui long chon hinh thuc cap nhap Vang or USD");
+  }
+ 
+  }
+  function ll(){
+    if(document.getElementById("1").value=="1"){
+        document.getElementById("hinh").innerHTML="<img src='Ford.jpg' / >";
+        document.getElementById("vang1").innerHTML='15000';
+      document.getElementById("usd1").innerHTML='20000';
+      document.getElementById("vang2").innerHTML='18.75';
+      document.getElementById("usd2").innerHTML='25';
+      document.getElementById("gia").innerHTML='25$';
+      }
+      else if(document.getElementById("1").value=="2"){
+        document.getElementById("hinh").innerHTML="<img src='1.jpg' / >";
+        document.getElementById("vang1").innerHTML='16700';
+      document.getElementById("usd1").innerHTML='21000';
+      document.getElementById("vang2").innerHTML='19.75';
+      document.getElementById("usd2").innerHTML='25.65';
+      document.getElementById("gia").innerHTML='25.65$';
+      }
+      else if(document.getElementById("1").value=="3"){
+        document.getElementById("hinh").innerHTML="<img src='2.jpg' / >";
+        document.getElementById("vang1").innerHTML='100000';
+      document.getElementById("usd1").innerHTML='215000';
+      document.getElementById("vang2").innerHTML='38.75';
+      document.getElementById("usd2").innerHTML='55';
+      document.getElementById("gia").innerHTML='55$';
+      } 
+  }
+        </script>
+    </body>
